@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %} 
+
+{% block title %}
+<title>Détail Joueur</title>
+{% endblock %} 
+
+{% block main %}
+<main>
+  <div class="card m-auto my-5" style="width: 18rem">
+    <img class="card-img-top" src="img/{{ getPlayer.img }}.jpg" alt="Card image cap">
+    <h5 class="card-title p-3 text-center">{{ getPlayer.nom }}</h5>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Prénom : {{ getPlayer.prenom }} </li>
+      <li class="list-group-item">Âge : {{ getPlayer.age }} ans</li>
+      <li class="list-group-item">Taille : {{ getPlayer.taille }} m</li>
+      <li class="list-group-item">Poids : {{ getPlayer.poids }} kg</li>
+      <li class="list-group-item">Salaire : {{ getPlayer.salaire|number_format(0,","," ")}}€</li>
+      <li class="list-group-item">Date de naissance : {{ getPlayer.bday|date("d/m/Y") }}</li>
+    </ul>
+  <a class="link-light m-auto btn btn-danger w-100" href="index.php">Retour</a>
+  </div>
+</main>
+{% endblock %}
